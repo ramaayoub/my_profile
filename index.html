@@ -13,48 +13,62 @@
             font-family: 'Arial', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #f4f4f9;
+            background-color: #f9f9fb;
             color: #333;
+            line-height: 1.6;
         }
 
         header {
             background-color: #2c3e50;
             color: #fff;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.2rem;
-            margin-top: 10px;
+            margin: 5px 0;
             color: #ecf0f1;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
             background-color: #34495e;
             padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
         }
 
         nav a:hover {
-            color: #1abc9c;
+            background-color: #1abc9c;
+            color: #fff;
         }
 
         section {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -62,6 +76,8 @@
         section h2 {
             margin-bottom: 20px;
             color: #2c3e50;
+            border-bottom: 3px solid #1abc9c;
+            padding-bottom: 5px;
         }
 
         .profile-photo {
@@ -70,19 +86,29 @@
         }
 
         .profile-photo img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 3px solid #1abc9c;
+            border: 4px solid #1abc9c;
+            object-fit: cover;
         }
 
         .bio {
             font-size: 1rem;
-            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
-        .contact {
-            margin-top: 40px;
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        ul li ul li {
+            margin-bottom: 5px;
         }
 
         .contact a {
@@ -90,13 +116,30 @@
             margin-right: 15px;
             text-decoration: none;
             color: #1abc9c;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact a:hover {
+            color: #16a085;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background-color: #2c3e50;
             color: #fff;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -105,41 +148,131 @@
     <header>
         <h1>Rama AYOUB</h1>
         <p>Research Scientist</p>
-        <p>Department of Mechanical Engineerin
-        King Abdullah University of Science and
-        Technology (KAUST)</p>
+        <p>Department of Mechanical Engineering, KAUST, Saudi Arabia</p>
+        <div class="profile-photo">
+            <img src="IMG_2630.jpg" alt="Rama AYOUB">
+        </div>
     </header>
 
     <nav>
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#employment">Experience</a>
+        <a href="#conferences">Conferences</a>
+        <a href="#certifications">Certifications</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <section id="about">
         <h2>About Me</h2>
-        <div class="profile-photo">
-            <img src="IMG_2630.jpg" alt="Rama AYOUB">
-        </div>
         <p class="bio">
-            Write a short introduction about yourself here. Highlight your skills, experience, and what makes you unique.
+        I received my Masters degree in Applied Mathematics from the University of Bordeaux 1, France and
+        my PhD from the University of La Rochelle, France. After completing my doctoral research on
+        developing a new discretization method for partial differential equations, I joined ENS Mécanique &
+        Microtechnique Besançon, France as Research and Teaching Assistant. Currently, I am a research scientist at King Abdullah University of Science and Technology, Saudi Arabia.
         </p>
     </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Include your work experience, education, or significant achievements here.</p>
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li>
+                <strong>Ph.D. Mechanics</strong>, University of La Rochelle, 2020
+                <ul>
+                    <li>Dissertation: Development of a method for discretization of PDEs based on Discrete Exterior Calculus - application to fluid mechanics</li>
+                    <li>Date of defense: October 2nd, 2020</li>
+                    <li>Supervisors: A. Hamdouni and D. Razafindralandy</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Research Master's in Applied Mathematics</strong>, University of Bordeaux 1, 2016
+                <ul>
+                    <li>Main topics: control theory, fluid mechanics, PDEs, numerical analysis</li>
+                    <li>Internship: Modeling a thermal de-icing system by a level-set method, CARDAMOM Team, INRIA Bordeaux Sud Ouest, France</li>
+                    <li>Supervisors: M. Colin and H. Beaugendre</li>
+                </ul>
+            </li>
+            <li>Bachelor in Mathematics, Faculty of Sciences, Lebanese University, Beirut-Lebanon, 2016</li>
+        </ul>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Showcase a few of your projects, portfolio pieces, or research work.</p>
+    <section id="employment">
+        <h2>Experience</h2>
+        <ul>
+            <li>
+                <strong>Research Scientist</strong>, KAUST, Saudi Arabia, April 2024 – present
+                <ul>
+                    <li>Principal Investigator: Prof. Peter J. Schmid</li>
+                    <li>Identifying solar modes (Rossby, critical, high-latitude) and performing stability analysis using wavemaker and Koopman analysis; developing Reduced Order Models based on Discrete Exterior Calculus</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Postdoctoral Fellow</strong>, KAUST, Saudi Arabia, August 2022 – March 2024
+                <ul>
+                    <li>Principal Investigator: Prof. Peter J. Schmid</li>
+                    <li>Developed parametric machine learning method “Improved-Greedy Identification of Latent Dynamics (I-GILD)” for turbulent flows</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Postdoctoral Fellow</strong>, KAUST, Saudi Arabia, September 2021 – July 2022
+                <ul>
+                    <li>Principal Investigator: Prof. Ravi Samtaney</li>
+                    <li>Resolved 2D forced turbulence problems on a rotating spherical surface using DEC-based numerical schemes</li>
+                </ul>
+            </li>
+            <li>Research and Teaching Assistant, ENS Mécanique & Microtechnique Besançon, France, 2020 – 2021</li>
+        </ul>
+    </section>
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <ul>
+            <li>
+                <strong>KAUST Academy</strong><br>
+                Bridging Program in Cybersecurity.<br>
+                In collaboration with the Ministry of Interior-Saudi Arabia (MOI) and King Fahd Security College (KFSC), delivering lectures and hands-on Python (40 hours), Statistics and Probability (40 hours) training as part of the Cybersecurity Bridging Program for military students.
+            </li>
+            <li>
+                <strong>KAUST Academy</strong><br>
+                AI training program at PIF (Public Investment Fund- Saudi Arabia)<br>
+                Introduction to Machine Learning and review of optimization (40 hours)
+            </li>
+            <li>
+                <strong>Research and Teaching Assistant</strong><br>
+                ATER Contract (96 hours) at ENS Mécanique & Microtechnique, Besançon, Mathematics Department.<br>
+                - Matrix and Vector Calculus (postgraduate)<br>
+                - Partial Differential Equations and Approximation (postgraduate)
+            </li>
+            <li>
+                <strong>Part-time Instructor (during PhD)</strong><br>
+                Teaching activities on numerical methods applied to engineering sciences:<br>
+                - Numerical Methods in Engineering Sciences (undergraduate Civil Engineering 2018-2019)<br>
+                - Numerical Simulation in Engineering (undergraduate Civil Engineering 2017-2018)<br>
+                - Mathematics for Undergraduate Business and Management 2017-2018
+            </li>
+        </ul>
+    </section>
+    <section id="conferences">
+        <h2>Conference Presentations</h2>
+        <ul>
+            <li>R. Ayoub, M. Oulghelou, P. Schmid. Data-Driven Reduced Order Models Under Physical Constraints. (APS25 - Houston)</li>
+            <li>R. Ayoub, M. Oulghelou, P. Schmid. Improved Greedy Identification of Latent Dynamics (I-GILD) with Application to Fluid Flows. (APS24 - Salt Lake City)</li>
+            <li>R. Ayoub, M. Oulghelou, A. Ammar. Interpolable Data-Driven Parametric Reduced Order Models (IPROM) for Flow Prediction. (APS23 - Washington DC)</li>
+            <li>R. Ayoub, D. Razafindralandy, A. Hamdouni. Projection scheme for Navier-Stokes resolution in DEC. (SIAM CSE23 - Amsterdam)</li>
+        </ul>
+    </section>
+
+    <section id="certifications">
+        <h2>Academic Qualifications & Certifications</h2>
+        <ul>
+            <li>Higher Education Teaching Certificate, Harvard's Derek Bok Center</li>
+            <li>Qualification by the National Council of Universities, France, Assistant Professor in Applied Mathematics</li>
+            <li>Qualification by the National Council of Universities, France, Assistant Professor in Mechanics</li>
+            <li>McKinsey Forward Program Certificate: Problem solving, communication, resilience (6-month online program)</li>
+        </ul>
     </section>
 
     <section id="contact">
         <h2>Contact</h2>
-        <p>Feel free to reach out to me via email or social media:</p>
         <div class="contact">
             <a href="mailto:rama.ayoub@kaust.edu.sa">Email</a>
             <a href="https://www.linkedin.com/in/rama-ayoub-b3738a10a" target="_blank">LinkedIn</a>
